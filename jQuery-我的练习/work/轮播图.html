@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="./jquery-1.10.1.js"></script>
+    <script type="text/javascript" src="./a.js"></script>
+    <style>
+        .content {
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            /* overflow:hidden; */
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 3600px;
+            height: 400px;
+            position: absolute;
+        }
+
+        ul li {
+            padding: 0;
+            float: left;
+            list-style: none;
+            height: 400px;
+        }
+
+        .points {
+            position: absolute;
+            height: 10px;
+            width: 100px;
+            z-index: 2;
+            bottom: 20px;
+            left: 250px;
+        }
+
+        /*所有的圆点<span>*/
+
+        .points span {
+            cursor: pointer;
+            float: left;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #333;
+            margin-right: 5px;
+        }
+
+        .points .on {
+            background: red
+        }
+
+        /*上一个切换图标的左外边距*/
+        .prev {
+            left: 20px;
+        }
+
+        /*下一个切换图标的右外边距*/
+        .next {
+            right: 20px;
+        }
+
+        .arrow {
+            cursor: pointer;
+            display: none;
+            line-height: 39px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 2;
+            top: 180px;
+            background-color: RGBA(0, 0, 0, 0.3);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .arrow:hover {
+            background-color: RGBA(0, 0, 0, 0.7);
+        }
+
+        .content:hover .arrow {
+            display: block;
+            /*显示*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <ul>
+            <li><img src="./img/1.jpg"></li>
+            <li><img src="./img/2.jpg"></li>
+            <li><img src="./img/3.jpg"></li>
+            <li><img src="./img/4.jpg"></li>
+            <li><img src="./img/5.jpg"></li>
+            <li><img src="./img/1.jpg"></li>
+        </ul>
+        <div class="points">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>
+        <a href="javascript:;" class="prev arrow" >&lt;</a>
+        <a href="javascript:;" class="next arrow" >&gt;</a>
+    </div>
+</body>
+
+</html>

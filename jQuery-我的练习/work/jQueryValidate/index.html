@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="./jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="./jquery.validate.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#message").validate({
+                messages:{
+                    name:{
+                        required:"请输入姓名",
+                        minlength:"最少两位",
+                        maxlength:"最大五位"
+                    },
+                    age:{
+                        max:"最大200",
+                        min:"最小0",
+                        required:"请输入年龄"
+                    }
+                }
+            })
+        })
+    </script>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="message">
+        姓名：<input type="text" required maxlength="5" minlength="2" placeholder="请输入2-5位" name="name">
+        <br>
+        年龄：<input type="text" required max="200" min="0" name="age">
+    </form>
+</body>
+</html>

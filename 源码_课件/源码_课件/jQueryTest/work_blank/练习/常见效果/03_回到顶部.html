@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>03_回到顶部</title>
+  <style>
+    #to_top {
+      width: 30px;
+      height: 40px;
+      text-align: center;
+      background: #06c;
+     	position: fixed;
+      cursor: pointer;
+      color: #fff;
+      left: 90%;
+      top: 80%;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body style="height: 2000px;">
+		<div id="to_top">返回顶部</div>
+		<script type="text/javascript" src="jquery-1.10.1.js"></script>
+		<script type="text/javascript">
+			var all=$("html,body");
+			$("#to_top").click(function(){
+				/*获取滚动条长度*/
+				var l=$(document.body).scrollTop()+$(document.documentElement).scrollTop()
+				var times=10;
+				var timeslong=l/times
+				var interval=setInterval(function(){
+					l-=timeslong
+					all.scrollTop(l);
+				},20)
+				if(l<=0){
+					clearInterval("interval")
+				}
+			})
+		</script>
+</body>
+
+</html>

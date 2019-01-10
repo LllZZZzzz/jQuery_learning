@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="./jquery-1.10.1.js"></script>
+    <script type="text/javascript" src="./a.js"></script>
+    <style>
+        .app{
+            width: 2000px;
+            height: 500px;
+            border: 1px solid red;
+            position: relative;
+        }
+        .move{
+            width: 100px;
+            height: 100px;
+            border: 1px solid yellow;
+            position: absolute;
+            left: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+         $(function(){
+               var a=document.getElementsByClassName("move")[0]
+            //  setInterval(function(){
+            //      a.style.left=a.offsetLeft+10+"px";
+                
+            //  },200)
+           a.onclick=function(e){
+            //    相对于页面和相对于定位元素
+               console.log(e.clientX,e.offsetX,a.offsetLeft,a.scrollLeft)
+           }
+          console.log( window.getComputedStyle(a))
+         }) 
+    </script>
+</head>
+
+<body>
+    <!--
+    需求: 点击"确定"按钮, 提示输入的值
+    -->
+    <!-- 用户名：<input type="text" name="name" class="username">
+    <input type="text" name="name2" class="username">
+    <button class="btn1">确定</button>
+    <button class="btn2">确定</button> -->
+        <div class="app">
+            <div class="move"></div>
+        </div>
+</body>
+
+</html>
